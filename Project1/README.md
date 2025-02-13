@@ -4,7 +4,7 @@
 $host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "web_sekolah";
+$dbname = "project";
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
@@ -204,3 +204,7 @@ struktur html dibawah untuk memastikan bahwa untuk masuk ke `index.php` harus de
     </ul>
 
 </form>
+
+# Nama Kelompok
+- Armyka Tita Silvi : registrasi.php, functions.php, index.php, login.php, dashboard.php
+- Yunita Eka Salsabila : index.php, readme.md
