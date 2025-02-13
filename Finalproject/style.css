@@ -70,21 +70,42 @@ button {
 .register {
     background-color: #c7b8ff;
     color: black;
+    border: 2px solid #5c4bb6
 }
 
 .register:hover{
     background-color: #ffffff;
-    border: 2px solid #5c4bb6
 }
 
 .login {
     background-color: #c7b8ff;
     color: black;
-    
+    border: 2px solid #5c4bb6
 }
 
 .login:hover{
     background-color: #ffffff;
+    border: 2px solid #5c4bb6
+}
+
+.register1 {
+    background-color: #ffffff;
+    color: black;
+    border: 2px solid #5c4bb6;
+}
+
+.register1:hover{
+    background-color: #c7b8ff;
+}
+
+.login1 {
+    background-color: #ffffff;
+    color: black;
+    border: 2px solid #5c4bb6
+}
+
+.login1:hover{
+    background-color: #c7b8ff;
     border: 2px solid #5c4bb6
 }
 
@@ -99,6 +120,12 @@ button {
 
 .content-text {
     max-width: 50%;
+    font-size: 1.1rem;
+}
+
+.content-text p{
+    padding-bottom: 40px;
+    text-align: left;
 }
 
 .content-image img {
