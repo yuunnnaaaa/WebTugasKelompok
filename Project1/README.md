@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 ?> 
 ```
 ## Query data
-Untuk query data, file dengan nama `function.php`. 
+Untuk query data, file dengan nama `functions.php`. 
 ```php
 <?php 
 function query($query) {
@@ -32,13 +32,13 @@ function query($query) {
 ```
 # CRUD
 ## Create data dan implementasi RSA
-Untuk create data, membuat fungsi register di file `function.php`. 
+Untuk create data, membuat fungsi register di file `functions.php`. 
 ```php
 <?php 
 function registrasi($data) {
     global $conn;
 
-    $nama = strtolower(stripslashes($data["nama"]));
+    $username = strtolower(stripslashes($data["username"]));
     $password = mysqli_real_escape_string($conn,$data["password"]);
     $conf_password = mysqli_real_escape_string($conn,$data["conf_password"]);
 
@@ -51,17 +51,17 @@ function registrasi($data) {
     // enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_query($conn, "INSERT INTO user VALUES('', '$nama', '$password')");
+    mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$password')");
 
     return mysqli_affected_rows($conn);
 }
 ?>
 ```
 ## Insert data
-Untuk insert data, memanggil fungsi register dari file `function.php` di file `register.php`.
+Untuk insert data, memanggil fungsi register dari file `functions.php` di file `register.php`.
 ```php
 <?php
-require 'function.php';
+require 'functions.php';
 
 if( isset($_POST["register"]) ) {
     if( registrasi($_POST) > 0 ) {
@@ -92,8 +92,8 @@ if( isset($_POST["register"]) ) {
     <form action="" method="post">
         <ul>
             <li>
-                <label for="nama">Nama Lengkap: </label>
-                <input type="text" name="nama" id="nama">
+                <label for="username">username Lengkap: </label>
+                <input type="text" name="username" id="username">
             </li>
             <li>
                 <label for="password">Password: </label>
@@ -113,11 +113,11 @@ if( isset($_POST["register"]) ) {
 struktur html ini untuk menyimpan inputan data ke database.
 
 ## Read Data
-Untuk read data, memanggil fungsi query dari file `function.php` di file `index.php`.
+Untuk read data, memanggil fungsi query dari file `functions.php` di file `index.php`.
 ```php
 <?php
-require 'function.php';
-$nama = mysqli_query($conn,"SELECT * FROM user ORDER BY nama LIMIT 20");
+require 'functions.php';
+$username = mysqli_query($conn,"SELECT * FROM user ORDER BY username LIMIT 20");
 ?>
 ```
 struktur html dibawah untuk memanggil data dari database untuk tampil di laman `index.php`.
@@ -125,18 +125,18 @@ struktur html dibawah untuk memanggil data dari database untuk tampil di laman `
 
     <tr>
         <th>NO</th>
-        <th>NAMA</th>
+        <th>username</th>
         <th>PASSWORD</th>
     </tr>
 
     <?php 
     $i = 1;
-    foreach( $nama as $row) :
+    foreach( $username as $row) :
     ?>
 
     <tr>
         <td><?= $i; ?></td>
-        <td><?= $row["nama"] ?></td>
+        <td><?= $row["username"] ?></td>
         <td><?= $row["password"] ?></td>
         <td>
             <a href="ubah.php?id=<?= $row["id"]; ?>" >ubah</a>
@@ -154,10 +154,10 @@ algoritma `login.php`
 <?php
 if ( isset($_POST["login"]) ) {
     
-    $nama = $_POST["nama"];
+    $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($conn, "SELECT * FROM user WHERE nama = '$nama'");
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
 
     // cek username
     if( mysqli_num_rows($result) === 1) {
@@ -188,8 +188,8 @@ struktur html dibawah untuk memastikan bahwa untuk masuk ke `index.php` harus de
 
     <ul>
         <li>
-            <label for="nama">Name :</label>
-            <input type="text" name="nama" id="nama">
+            <label for="username">Name :</label>
+            <input type="text" name="username" id="username">
         </li>
 
         <li>
@@ -205,6 +205,6 @@ struktur html dibawah untuk memastikan bahwa untuk masuk ke `index.php` harus de
 
 </form>
 
-# Nama Kelompok
+# username Kelompok
 - Armyka Tita Silvi : registrasi.php, functions.php, index.php, login.php, dashboard.php
 - Yunita Eka Salsabila : index.php, readme.md
