@@ -68,14 +68,24 @@ button {
 }
 
 .register {
-    background-color: #e0d4ff;
+    background-color: #c7b8ff;
     color: black;
 }
 
+.register:hover{
+    background-color: #ffffff;
+    border: 2px solid #5c4bb6
+}
+
 .login {
-    background-color: white;
+    background-color: #c7b8ff;
     color: black;
-    border: 2px solid #5c4bb6;
+    
+}
+
+.login:hover{
+    background-color: #ffffff;
+    border: 2px solid #5c4bb6
 }
 
 .content {
