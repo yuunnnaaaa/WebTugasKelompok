@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <section class="hero" id="sect1">
+        <h1>Medical Center</h1>
+        <h3>Check Up Klik</h3>
+
+        <div class="row">
+            <div class="column left">
+                <img src="image/Calendar-cuate.png" alt="Ilustrasi Kalender">
+            </div>
+            <div class="column right">
+                <p>Dapatkan layanan check-up kesehatan dengan mudah dan cepat melalui platform kami. Registrasi online, pencatatan medis otomatis, dan akses informasi kesehatan dalam satu genggaman. Segera daftar dan nikmati kemudahan layanan kesehatan modern!</p>
+                <div class="buttons">
+                    <button class="register" id="sign-up">Register</button>
+                    <button class="login" id="sign-in">Login</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup-BtnSignIn">
+        <div class="popup-content">
+            <form action="login.html">
+                <img src="image/close.png" alt="close" class="close" id="close1">
+                <img src="image/user.jpg" alt="user" class="user">
+                <p>Silahkan Masukkan Data Anda</p>
+                <input type="text" name="username" id="username" placeholder="Nama Lengkap">
+                <input type="password" name="password" id="password" placeholder="Kata Sandi">
+                <button href="" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-BtnSignUp">
+        <div class="popup-content">
+            <form action="register.html">
+                <img src="image/close.png" alt="close" class="close" id="close2">
+                <img src="image/user.jpg" alt="user" class="user">
+                <p>Isi Data Berikut untuk Membuat Akun</p>
+                <input type="text" name="nama" id="nama" placeholder="Nama Lengkap">
+                <input type="number" name="usia" id="usia" placeholder="Usia Anda">
+                <input type="password" name="password" id="password" placeholder="Kata Sandi">
+                <button href="#" class="btn">Buat Akun</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="content" id="sect2">
+        <div class="content-text">
+            <p> ✓ Layanan kesehatan modern, cepat, dan terpercaya! <br>
+                ✓ Dapatkan pemeriksaan kesehatan dengan mudah & praktis. <br>
+                ✓ Jadwalkan check-up Anda sekarang dan nikmati layanan terbaik dari tenaga medis profesional. <br>
+                ✓ Daftar sekarang dan mulai perjalanan kesehatan Anda! <br>
+                ✓ Sehat, Nyaman, dan Aman bersama Medical Center!</p>
+            
+            <div class="buttons" >
+                <button class="register1"><a href="#sect1" style="text-decoration: none;">Segera Daftar dan Buat Akun</a></button>
+            </div>
+        </div>
+        <div class="content-image">
+            <img src="image/Good team-pana.png" alt="Diskusi Medis">
+        </div>
+    </section>
+</div>
+
+<script>
+    document.getElementById("sign-in").addEventListener("click", function(){
+        document.querySelector(".popup-BtnSignIn").style.display =  "flex";
+    })
+
+    document.getElementById("close1").addEventListener("click", function(){
+        document.querySelector(".popup-BtnSignIn").style.display =  "none";
+    })
+
+    document.getElementById("sign-up").addEventListener("click", function(){
+        document.querySelector(".popup-BtnSignUp").style.display =  "flex";
+    })
+
+    document.getElementById("close2").addEventListener("click", function(){
+        document.querySelector(".popup-BtnSignUp").style.display =  "none";
+    })
+
+
+</script>
+
+</body>
+</html>
