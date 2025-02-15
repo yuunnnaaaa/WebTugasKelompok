@@ -1,22 +1,3 @@
-<?php
-// Masukkan file functions.php untuk koneksi database dan fungsi registrasi
-require 'functions.php';
-
-// Cek apakah tombol register ditekan
-if (isset($_POST["register"])) {
-    if (registrasi($_POST) > 0) {
-        echo "<script>
-                alert('User baru berhasil ditambahkan!');
-                window.location = 'login.php'; // Redirect ke halaman login
-              </script>";
-    } else {
-        echo "<script>
-                alert('Registrasi gagal! Username mungkin sudah ada.');
-              </script>";
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
