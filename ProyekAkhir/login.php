@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require 'functions.php';
 
 if ( isset($_POST["login"]) ) {
@@ -64,4 +64,4 @@ if ( isset($_POST["login"]) ) {
 </form>
     
 </body>
-</html>
+</html> -->

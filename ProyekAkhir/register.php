@@ -1,21 +1,22 @@
 <?php
 // Masukkan file functions.php untuk koneksi database dan fungsi registrasi
 require 'functions.php';
+require 'db.js';
 
-// Cek apakah tombol register ditekan
-if (isset($_POST["register"])) {
-    if (registrasi($_POST) > 0) {
-        echo "<script>
-                alert('User baru berhasil ditambahkan!');
-                window.location = 'login.php'; // Redirect ke halaman login
-              </script>";
-    } else {
-        echo "<script>
-                alert('Registrasi gagal! Username mungkin sudah ada.');
-              </script>";
-    }
-}
-?>
+// // Cek apakah tombol register ditekan
+// if (isset($_POST["register"])) {
+//     if (registrasi($_POST) > 0) {
+//         echo "<script>
+//                 alert('User baru berhasil ditambahkan!');
+//                 window.location = 'login.php'; // Redirect ke halaman login
+//               </script>";
+//     } else {
+//         echo "<script>
+//                 alert('Registrasi gagal! Username mungkin sudah ada.');
+//               </script>";
+//     }
+// }
+// ?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -31,7 +32,7 @@ if (isset($_POST["register"])) {
         <div class="register-box">
             <h2>Create Your Account</h2>
 
-            <form action="login.html" method="post">
+            <form action="proses.php" method="POST">
                 <label for="nama">Nama Lengkap</label>
                 <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
 
@@ -43,7 +44,7 @@ if (isset($_POST["register"])) {
 
                 <p class="login-text">Sudah punya akun? <a href="login.html">Login di sini!</a></p>
 
-                <button type="submit" class="register-btn" name="register" href="login.html">Buat Akun</button>
+                <button type="submit" class="register-btn" name="register">Buat Akun</button>
             </form>
         </div>
     </div>
