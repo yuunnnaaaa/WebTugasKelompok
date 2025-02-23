@@ -1,7 +1,6 @@
 <?php
 // Masukkan file functions.php untuk koneksi database dan fungsi registrasi
 require 'functions.php';
-require 'db.js';
 
 // // Cek apakah tombol register ditekan
 // if (isset($_POST["register"])) {
@@ -34,7 +33,7 @@ require 'db.js';
 
             <form action="proses.php" method="POST">
                 <label for="nama">Nama Lengkap</label>
-                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                <input type="text" id="nama" name="username" placeholder="Masukkan nama lengkap" required>
 
                 <label for="usia">Usia</label>
                 <input type="number" id="usia" name="usia" placeholder="Masukkan usia" required>
