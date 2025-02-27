@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 require 'functions.php';
 
 if ( isset($_POST["login"]) ) {
@@ -23,45 +23,39 @@ if ( isset($_POST["login"]) ) {
 
 }
 
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Login</title>
+    <title>Login - Medical Center</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
-<h1>Halaman Login</h1>
+    <div class="container">
+        <div class="login-box">
+            <h2>Medical Center</h2>
+            <?php if( isset($error) ) : ?>
+                <p style="color: red; font-style: italic;">username / password salah</p>
+            <?php endif; ?>
+            <form action="login.php" method="post">
+                <label for="nama">Nama</label>
+                <input type="text" id="username" name="username" placeholder="Masukkan nama" required>
 
-<?php if( isset($error) ) : ?>
-    <p style="color: red; font-style: italic;">username / password salah</p>
-<?php endif; ?>
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
 
-<form action="" method="post">
+                <a href="#" class="forgot-password">Lupa kata sandi?</a>
 
-    <ul>
-        <li>
-            <label for="username">Username :</label>
-            <input type="text" name="username" id="username">
-        </li>
+                <a href="dashboard.php"><button type="submit" class="login-btn">Login</button></a>
 
-        <li>
-            <label for="password">Password :</label>
-            <input type="password" name="password" id="password">
-        </li>
-        <br>
-        <li>
-            <button type="submit" name="login">Login</button>
-        </li>
+                <p class="register-text">Belum punya akun? <a href="register.php">Register di sini!</a></p>
+            </form>
+        </div>
+    </div>
 
-    </ul>
-
-
-</form>
-    
 </body>
-</html> -->
+</html>

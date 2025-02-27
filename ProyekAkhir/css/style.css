@@ -147,7 +147,7 @@ button {
     }
 }
 
-.contaiiner {
+.container {
     position: absolute;
 }
 
@@ -165,6 +165,19 @@ button {
 }
 
 .popup-BtnSignUp {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    align-items: start;
+    text-align: center;
+}
+
+.popup-success {
     background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 200%;

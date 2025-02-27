@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Center</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -29,28 +29,37 @@
 
     <div class="popup-BtnSignIn">
         <div class="popup-content">
-            <form action="login.html">
+            <form action="login.php" method="POST">
                 <img src="image/close.png" alt="close" class="close" id="close1">
                 <img src="image/user.jpg" alt="user" class="user">
                 <p>Silahkan Masukkan Data Anda</p>
                 <input type="text" name="username" id="username" placeholder="Nama Lengkap">
                 <input type="password" name="password" id="password" placeholder="Kata Sandi">
-                <button href="" class="btn">Login</button>
+                <button type="submit"  name="login" id="login" class="btn">Login</button>
             </form>
         </div>
     </div>
 
     <div class="popup-BtnSignUp">
         <div class="popup-content">
-            <form action="proses.php">
+            <form action="" method="POST">
                 <img src="image/close.png" alt="close" class="close" id="close2">
                 <img src="image/user.jpg" alt="user" class="user">
                 <p>Isi Data Berikut untuk Membuat Akun</p>
                 <input type="text" name="username" id="nama" placeholder="Nama Lengkap">
                 <input type="number" name="usia" id="usia" placeholder="Usia Anda">
                 <input type="password" name="password" id="password" placeholder="Kata Sandi">
-                <button href="#" class="btn">Buat Akun</button>
+                <button type="submit" nama="register" id="register" class="btn">Buat Akun</button>
             </form>
+        </div>
+    </div>
+
+    <div class="popup-success">
+        <div class="popup-content">
+            <img src="image/close.png" alt="close" class="close" id="close3">
+            <img src="image/user.jpg" alt="user" class="user">
+            <div class="text"><a href="login.php" style="text-decoration: none;"> Klik Disini untuk Login</a></div>
+            <script src="akun-terdaftar.js"></script>
         </div>
     </div>
 
@@ -89,7 +98,13 @@
         document.querySelector(".popup-BtnSignUp").style.display =  "none";
     })
 
+    document.getElementById("register").addEventListener("click", function(){
+        document.querySelector(".popup-success").style.display =  "flex";
+    })
 
+    document.getElementById("close3").addEventListener("click", function(){
+        document.querySelector(".popup-success").style.display =  "none";
+    })
 </script>
 
 </body>
