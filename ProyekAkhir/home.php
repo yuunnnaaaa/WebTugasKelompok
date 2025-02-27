@@ -42,7 +42,7 @@
 
     <div class="popup-BtnSignUp">
         <div class="popup-content">
-            <form action="" method="POST">
+            <form action="proses.php" method="POST">
                 <img src="image/close.png" alt="close" class="close" id="close2">
                 <img src="image/user.jpg" alt="user" class="user">
                 <p>Isi Data Berikut untuk Membuat Akun</p>
@@ -51,15 +51,6 @@
                 <input type="password" name="password" id="password" placeholder="Kata Sandi">
                 <button type="submit" nama="register" id="register" class="btn">Buat Akun</button>
             </form>
-        </div>
-    </div>
-
-    <div class="popup-success">
-        <div class="popup-content">
-            <img src="image/close.png" alt="close" class="close" id="close3">
-            <img src="image/user.jpg" alt="user" class="user">
-            <div class="text"><a href="login.php" style="text-decoration: none;"> Klik Disini untuk Login</a></div>
-            <script src="akun-terdaftar.js"></script>
         </div>
     </div>
 
@@ -96,14 +87,6 @@
 
     document.getElementById("close2").addEventListener("click", function(){
         document.querySelector(".popup-BtnSignUp").style.display =  "none";
-    })
-
-    document.getElementById("register").addEventListener("click", function(){
-        document.querySelector(".popup-success").style.display =  "flex";
-    })
-
-    document.getElementById("close3").addEventListener("click", function(){
-        document.querySelector(".popup-success").style.display =  "none";
     })
 </script>
 

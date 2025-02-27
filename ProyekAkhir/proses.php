@@ -5,8 +5,11 @@ require_once "functions.php";
 $username = $_POST['username'];
 $usia = $_POST['usia'];
 $password = $_POST['password'];
+// enkripsi password
+$password = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO user (username, usia, password) VALUES ('".$username."','".$usia."','".$password."')";
+
 
 if($conn->query($sql) === TRUE){
 	echo "Akun Anda Terdaftar ";
