@@ -1,59 +1,38 @@
 <?php
-require 'functions.php'; // Koneksi database dan fungsi
-
-header("Content-Type: application/json");
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $data = json_decode(file_get_contents("php://input"), true);
-
-    if (!$data) {
-        echo json_encode(["status" => "error", "message" => "Data tidak valid"]);
-        exit;
-    }
-
-    // Ambil data dari request
-    $username = $data["username"];
-    $usia = $data["usia"];
-    $password = $data["password"];
-    
-
-    // Panggil fungsi registrasi
-    $result = registrasi($username, $usia, $password);
-
-    if ($result > 0) {
-        echo json_encode(["status" => "success", "message" => "User berhasil didaftarkan!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Registrasi gagal! Username mungkin sudah ada."]);
-    }
-}
-
-// Fungsi registrasi (dipindahkan ke sini)
-function registrasi($username, $usia, $password) {
-    global $conn;
-
-    $username = strtolower(stripslashes($username));
-    $usia = intval($usia);
-    $password = mysqli_real_escape_string($conn, $password);
-    
-
-    // Cek apakah username sudah terdaftar
-    $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
-
-    if (mysqli_fetch_assoc($result)) {
-        return 0;
-    }
-
-    // Cek konfirmasi password
-    if ($password !== $password2) {
-        return 0;
-    }
-
-    // Enkripsi password sebelum disimpan
-    $password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Masukkan ke database
-    mysqli_query($conn, "INSERT INTO users (username, usia, password) VALUES ('$username', '$usia', '$password')");
-
-    return mysqli_affected_rows($conn);
-}
+// Masukkan file functions.php untuk koneksi database dan fungsi registrasi
+require 'functions.php';
 ?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Medical Center</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="register-box">
+            <h2>Create Your Account</h2>
+
+            <form action="proses.php" method="POST">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" name="username" placeholder="Masukkan nama lengkap" required>
+
+                <label for="usia">Usia</label>
+                <input type="number" id="usia" name="usia" placeholder="Masukkan usia" required>
+
+                <label for="password">Kata Sandi</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
+
+                <p class="login-text">Sudah punya akun? <a href="login.html">Login di sini!</a></p>
+
+                <button type="submit" class="register-btn" name="register">Buat Akun</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
